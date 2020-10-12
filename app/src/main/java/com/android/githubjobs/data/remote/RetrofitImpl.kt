@@ -1,5 +1,6 @@
 package com.android.githubjobs.data.remote
 
+import com.android.githubjobs.BuildConfig
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -15,12 +16,12 @@ class RetrofitImpl : IRetrofit {
             .build()
 
         retrofit = Retrofit.Builder()
-            .baseUrl("... caminho API build.config ...")
+            .baseUrl(BuildConfig.URL_BASE)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
     }
 
-    override fun getInstance(): Api {
-        return retrofit.create(Api::class.java)
+    override fun getInstance(): IApi {
+        return retrofit.create(IApi::class.java)
     }
 }

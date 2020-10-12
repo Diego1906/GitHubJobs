@@ -22,6 +22,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'URL_BASE', urlBase
+    }
 }
 
 dependencies {
@@ -36,8 +45,8 @@ dependencies {
     // Retrofit Converter
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_converter_version"
     // Moshi
-    implementation "com.squareup.moshi:moshi:1.11.0"
-    implementation "com.squareup.moshi:moshi-kotlin:1.11.0"
+    //implementation "com.squareup.moshi:moshi:1.11.0"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_kotlin"
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
