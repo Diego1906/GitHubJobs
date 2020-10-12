@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GitHubJobs</string>
+    <string name="not_informed">Data not informed</string>
 </resources>
