@@ -1,6 +1,6 @@
 package com.android.githubjobs.domain.usecase
 
-import com.android.githubjobs.domain.models.Jobs
+import com.android.githubjobs.domain.model.Jobs
 
 interface IUseCase {
 

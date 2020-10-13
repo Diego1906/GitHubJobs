@@ -1,19 +1,19 @@
 package com.android.githubjobs.data.repository
 
 import com.android.githubjobs.data.mapper.mapToDomain
-import com.android.githubjobs.data.remote.IApi
-import com.android.githubjobs.domain.models.Jobs
+import com.android.githubjobs.data.remote.IRetrofit
+import com.android.githubjobs.domain.model.Jobs
 
-class RepositoryImpl(private val api: IApi) : IRepository {
+class RepositoryImpl(private val api: IRetrofit) : IRepository {
 
     override suspend fun getByFilter(search: String): List<Jobs> {
-        return api.getByFilter(search).map {
+        return api.getInstance().getByFilter(search).map {
             it.mapToDomain()
         }
     }
 
     override suspend fun getAll(): List<Jobs> {
-        return api.getAll().map {
+        return api.getInstance().getAll().map {
             it.mapToDomain()
         }
     }

@@ -1,6 +1,6 @@
 package com.android.githubjobs.data.repository
 
-import com.android.githubjobs.domain.models.Jobs
+import com.android.githubjobs.domain.model.Jobs
 
 interface IRepository {
 

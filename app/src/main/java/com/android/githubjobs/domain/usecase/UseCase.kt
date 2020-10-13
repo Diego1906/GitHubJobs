@@ -1,7 +1,7 @@
 package com.android.githubjobs.domain.usecase
 
 import com.android.githubjobs.data.repository.IRepository
-import com.android.githubjobs.domain.models.Jobs
+import com.android.githubjobs.domain.model.Jobs
 
 class UseCase(private val repository: IRepository) : IUseCase {
 

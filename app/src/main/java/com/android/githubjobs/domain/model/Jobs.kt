@@ -1,4 +1,4 @@
-package com.android.githubjobs.domain.models
+package com.android.githubjobs.domain.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
