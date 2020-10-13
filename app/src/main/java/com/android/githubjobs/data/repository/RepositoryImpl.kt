@@ -4,7 +4,7 @@ import com.android.githubjobs.data.mapper.mapToDomain
 import com.android.githubjobs.data.remote.IApi
 import com.android.githubjobs.domain.models.Jobs
 
-class RepositoryImpl(val api: IApi) : IRepository {
+class RepositoryImpl(private val api: IApi) : IRepository {
 
     override suspend fun getByFilter(search: String): List<Jobs> {
         return api.getByFilter(search).map {

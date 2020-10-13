@@ -1,8 +1,8 @@
-package com.android.githubjobs.data.repository
+package com.android.githubjobs.domain.usecase
 
 import com.android.githubjobs.domain.models.Jobs
 
-interface IRepository {
+interface IUseCase {
 
     suspend fun getByFilter(search: String): List<Jobs>
 
