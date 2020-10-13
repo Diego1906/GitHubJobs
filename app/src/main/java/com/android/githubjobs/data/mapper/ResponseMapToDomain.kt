@@ -1,6 +1,6 @@
-package com.android.githubjobs.data.remote.mapper
+package com.android.githubjobs.data.mapper
 
-import com.android.githubjobs.data.remote.dto.JobsResponse
+import com.android.githubjobs.data.dto.JobsResponse
 import com.android.githubjobs.domain.models.Jobs
 import com.android.githubjobs.util.checkData
 
