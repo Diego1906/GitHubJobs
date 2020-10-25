@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.android.githubjobs.data.remote.RetrofitImpl
 import com.android.githubjobs.data.repository.RepositoryImpl
 import com.android.githubjobs.domain.model.Jobs
-import com.android.githubjobs.domain.usecase.UseCase
+import com.android.githubjobs.domain.usecase.UseCaseImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
