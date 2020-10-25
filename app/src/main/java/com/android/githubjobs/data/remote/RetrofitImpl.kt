@@ -5,8 +5,9 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Inject
 
-class RetrofitImpl : IRetrofit {
+class RetrofitImpl @Inject constructor() : IRetrofit {
 
     private val retrofit: Retrofit
 
@@ -18,7 +19,7 @@ class RetrofitImpl : IRetrofit {
         retrofit = Retrofit.Builder()
             .baseUrl(BuildConfig.URL_BASE)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
-         //   .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            //   .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
     }
 
