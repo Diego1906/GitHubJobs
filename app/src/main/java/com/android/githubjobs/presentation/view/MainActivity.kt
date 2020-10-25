@@ -2,7 +2,6 @@ package com.android.githubjobs.presentation.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.android.githubjobs.R
 import com.android.githubjobs.presentation.viewmodel.JobsViewModel
@@ -23,9 +22,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-        viewModel.jobs.observe(this, Observer { jobs ->
-            jobs?.let {
-                it.forEach {
+        viewModel.jobs.observe(this, { jobs ->
+            jobs?.let { list ->
+                list.forEach {
                     println("Teste Jobs: $it")
                 }
             }
