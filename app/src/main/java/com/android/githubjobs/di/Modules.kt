@@ -13,21 +13,17 @@ import dagger.hilt.android.components.ActivityComponent
 
 @InstallIn(ActivityComponent::class)
 @Module
-object RetrofitModule {
+object DataModule {
     @Provides
     fun provideRetrofit(): IRetrofit = RetrofitImpl()
-}
 
-@InstallIn(ActivityComponent::class)
-@Module
-object RepositoryModule {
     @Provides
     fun provideRepository(api: IRetrofit): IRepository = RepositoryImpl(api)
 }
 
 @InstallIn(ActivityComponent::class)
 @Module
-class UseCaseModule {
+class DomainModule {
     @Provides
     fun provideUseCase(repository: IRepository): IUseCase = UseCaseImpl(repository)
 }
