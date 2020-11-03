@@ -14,13 +14,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="@dimen/dip_8"
+        android:layout_marginEnd="@dimen/dip_8"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="4dp"
+        app:cardCornerRadius="@dimen/dip_4"
+        app:cardElevation="@dimen/dip_4"
         app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,25 +29,26 @@
 
             <TextView
                 android:id="@+id/titleItem"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dip_0"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:padding="8dp"
-                android:textSize="18sp"
+                android:padding="@dimen/dip_8"
+                android:text="@{jobs.title}"
+                android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/imageItemLogo"
                 app:layout_constraintEnd_toStartOf="@id/imageItemLogo"
                 app:layout_constraintHorizontal_weight="2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/imageItemLogo"
-                tools:text="Sr. Linux Sensor Engineer (Remote)" />
+                tools:text="Sr. Android Engineer (Remote)" />
 
             <ImageView
                 android:id="@+id/imageItemLogo"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
-                android:padding="4dp"
+                android:padding="@dimen/dip_4"
                 android:scaleType="fitStart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_weight="1"
@@ -57,10 +58,10 @@
 
             <TextView
                 android:id="@+id/lblCompanyNameItem"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dip_0"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Company"
+                android:padding="@dimen/dip_8"
+                android:text="@string/company"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@id/lblLocationItem"
                 app:layout_constraintHorizontal_weight="2"
@@ -69,10 +70,10 @@
 
             <TextView
                 android:id="@+id/lblLocationItem"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dip_0"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Location"
+                android:padding="@dimen/dip_8"
+                android:text="@string/location"
                 android:textStyle="bold"
                 app:layout_constraintBaseline_toBaselineOf="@id/lblCompanyNameItem"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -81,9 +82,10 @@
 
             <TextView
                 android:id="@+id/txtCompanyNameItem"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dip_0"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:padding="@dimen/dip_8"
+                android:text="@{jobs.company}"
                 app:layout_constraintEnd_toEndOf="@id/lblCompanyNameItem"
                 app:layout_constraintStart_toStartOf="@id/lblCompanyNameItem"
                 app:layout_constraintTop_toBottomOf="@id/lblCompanyNameItem"
@@ -91,9 +93,10 @@
 
             <TextView
                 android:id="@+id/txtLocationItem"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dip_0"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
+                android:padding="@dimen/dip_8"
+                android:text="@{jobs.location}"
                 app:layout_constraintBaseline_toBaselineOf="@id/txtCompanyNameItem"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/txtCompanyNameItem"
