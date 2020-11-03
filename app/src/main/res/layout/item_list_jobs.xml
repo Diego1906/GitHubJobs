@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="jobs"
+            type="com.android.githubjobs.domain.model.Jobs" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/titleItem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/imageItemLogo"
+                app:layout_constraintEnd_toStartOf="@id/imageItemLogo"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imageItemLogo"
+                tools:text="Sr. Linux Sensor Engineer (Remote)" />
+
+            <ImageView
+                android:id="@+id/imageItemLogo"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:padding="4dp"
+                android:scaleType="fitStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/titleItem"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:id="@+id/lblCompanyNameItem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Company"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/lblLocationItem"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="@id/titleItem"
+                app:layout_constraintTop_toBottomOf="@id/imageItemLogo" />
+
+            <TextView
+                android:id="@+id/lblLocationItem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Location"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/lblCompanyNameItem"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/lblCompanyNameItem" />
+
+            <TextView
+                android:id="@+id/txtCompanyNameItem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="@id/lblCompanyNameItem"
+                app:layout_constraintStart_toStartOf="@id/lblCompanyNameItem"
+                app:layout_constraintTop_toBottomOf="@id/lblCompanyNameItem"
+                tools:text="CrowdStrike" />
+
+            <TextView
+                android:id="@+id/txtLocationItem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/txtCompanyNameItem"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtCompanyNameItem"
+                tools:text="USA" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
