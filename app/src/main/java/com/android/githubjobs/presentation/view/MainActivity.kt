@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setListeners() {
-        textClick.setOnClickListener {
-            viewModel.getAll()
-        }
+//        textClick.setOnClickListener {
+//            viewModel.getAll()
+//        }
     }
 }
