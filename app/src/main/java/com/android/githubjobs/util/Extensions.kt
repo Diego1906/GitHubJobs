@@ -1,5 +1,5 @@
 package com.android.githubjobs.util
 
-fun String?.checkData(): String {
+fun String?.checkExistsData(): String {
     return this.takeUnless { it.isNullOrEmpty() } ?: "Data not informed"
 }

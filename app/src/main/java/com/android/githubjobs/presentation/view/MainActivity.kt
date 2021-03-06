@@ -3,6 +3,7 @@ package com.android.githubjobs.presentation.view
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.android.githubjobs.R
 import com.android.githubjobs.presentation.viewmodel.JobsViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,8 +23,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViewModel() {
-        viewModel.jobs.observe(this, { jobs ->
-            jobs?.let { list ->
+        viewModel.jobs.observe(this, Observer { jobs ->
+            jobs.let { list ->
                 list.forEach {
                     println("Teste Jobs: $it")
                 }
@@ -32,8 +33,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setListeners() {
-//        textClick.setOnClickListener {
-//            viewModel.getAll()
-//        }
+        btn_click.setOnClickListener {
+            viewModel.getAll()
+        }
     }
 }

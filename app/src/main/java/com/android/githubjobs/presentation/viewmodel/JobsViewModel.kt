@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import com.android.githubjobs.domain.model.Jobs
 import com.android.githubjobs.domain.usecase.IUseCase
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
