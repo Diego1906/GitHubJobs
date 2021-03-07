@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.githubjobs.databinding.ItemListJobsBinding
 import com.android.githubjobs.domain.model.Jobs
 
-class JobsAdapter(private val block: (Jobs) -> Unit) :
+class JobsAdapter(private val action: (Jobs) -> Unit) :
     ListAdapter<Jobs, JobsAdapter.JobsVieWHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobsVieWHolder {
@@ -17,10 +17,10 @@ class JobsAdapter(private val block: (Jobs) -> Unit) :
 
     override fun onBindViewHolder(holder: JobsVieWHolder, position: Int) {
         val jobs = getItem(position)
-        holder.itemView.setOnClickListener {
-            block.invoke(jobs)
+        with(holder) {
+            itemView.setOnClickListener { action.invoke(jobs) }
+            bind(jobs)
         }
-        holder.bind(jobs)
     }
 
     class JobsVieWHolder private constructor(private val binding: ItemListJobsBinding) :
@@ -33,20 +33,22 @@ class JobsAdapter(private val block: (Jobs) -> Unit) :
 
         companion object {
             fun from(parent: ViewGroup): JobsVieWHolder {
-                val view = ItemListJobsBinding.inflate(LayoutInflater.from(parent.context))
+                val view = ItemListJobsBinding.inflate(
+                    LayoutInflater.from(parent.context), parent, false
+                )
                 return JobsVieWHolder(view)
             }
         }
     }
-}
 
-object DiffCallback : DiffUtil.ItemCallback<Jobs>() {
-    override fun areItemsTheSame(oldItem: Jobs, newItem: Jobs): Boolean {
-        return oldItem == newItem
-    }
+    object DiffCallback : DiffUtil.ItemCallback<Jobs>() {
+        override fun areItemsTheSame(oldItem: Jobs, newItem: Jobs): Boolean {
+            return oldItem == newItem
+        }
 
-    override fun areContentsTheSame(oldItem: Jobs, newItem: Jobs): Boolean {
-        return oldItem.id == newItem.id && oldItem.createdAt == newItem.createdAt
+        override fun areContentsTheSame(oldItem: Jobs, newItem: Jobs): Boolean {
+            return oldItem.id == newItem.id && oldItem.createdAt == newItem.createdAt
+        }
     }
 }
 

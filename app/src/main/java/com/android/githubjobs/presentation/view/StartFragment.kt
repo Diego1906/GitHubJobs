@@ -18,7 +18,11 @@ class StartFragment : Fragment() {
 
     private val viewModel by viewModels<JobsViewModel>()
 
-    private lateinit var adapter: JobsAdapter
+    private val adapter: JobsAdapter = JobsAdapter {
+        println("This is Job: $it")
+
+        // Todo: Navegar para a tela de detalhes
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -29,7 +33,6 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initAdapter()
         initRecyclerAdapter()
         initObserver()
     }
@@ -39,14 +42,6 @@ class StartFragment : Fragment() {
         viewModel.getAll()
     }
 
-    private fun initAdapter() {
-        adapter = JobsAdapter {
-            println("This is Job: $it")
-
-            // Todo: Navegar para a tela de detalhes
-        }
-    }
-
     private fun initRecyclerAdapter() {
         recyclerItemJobs?.adapter = adapter
     }
@@ -54,7 +49,15 @@ class StartFragment : Fragment() {
     private fun initObserver() {
         viewModel.jobs.observe(viewLifecycleOwner, Observer { jobs ->
             jobs?.let {
-                adapter.submitList(it)
+                adapter.submitList(jobs)
+
+                viewModel.hideProgress()
+            }
+        })
+
+        viewModel.progress.observe(viewLifecycleOwner, Observer { value ->
+            value?.let {
+                progress_circular?.visibility = value
             }
         })
     }

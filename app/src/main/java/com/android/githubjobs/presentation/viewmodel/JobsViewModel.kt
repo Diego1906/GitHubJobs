@@ -1,5 +1,6 @@
 package com.android.githubjobs.presentation.viewmodel
 
+import android.view.View
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -16,6 +17,10 @@ class JobsViewModel @ViewModelInject constructor(private val usecase: IUseCase) 
     private var _jobs = MutableLiveData<List<Jobs>>()
     val jobs: LiveData<List<Jobs>>
         get() = _jobs
+
+    private var _progress = MutableLiveData<Int>()
+    val progress
+        get() = _progress
 
     fun getByFilter(search: String) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -35,6 +40,10 @@ class JobsViewModel @ViewModelInject constructor(private val usecase: IUseCase) 
                 //TODO: not implemented
             }
         }
+    }
+
+    fun hideProgress() {
+        _progress.value = View.GONE
     }
 
     override fun onCleared() {
