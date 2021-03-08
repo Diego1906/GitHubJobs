@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.android.githubjobs.R
 import com.android.githubjobs.presentation.adapter.JobsAdapter
 import com.android.githubjobs.presentation.viewmodel.JobsViewModel
@@ -18,10 +19,10 @@ class StartFragment : Fragment() {
 
     private val viewModel by viewModels<JobsViewModel>()
 
-    private val adapter: JobsAdapter = JobsAdapter {
-        println("This is Job: $it")
-
-        // Todo: Navegar para a tela de detalhes
+    private val adapter = JobsAdapter { jobs ->
+        findNavController().navigate(
+            StartFragmentDirections.actionStartFragmentToDetailFragment(jobs)
+        )
     }
 
     override fun onCreateView(
@@ -49,9 +50,8 @@ class StartFragment : Fragment() {
     private fun initObserver() {
         viewModel.jobs.observe(viewLifecycleOwner, Observer { jobs ->
             jobs?.let {
-                adapter.submitList(jobs)
-
                 viewModel.hideProgress()
+                adapter.submitList(jobs)
             }
         })
 
