@@ -15,5 +15,5 @@ fun JobsResponse.mapToDomain() = Jobs(
     title = this.title.checkExistsData(),
     description = this.description.checkExistsData(),
     howToApply = this.howToApply.checkExistsData(),
-    companyLogo = this.companyLogo.checkExistsData()
+    companyLogoUrl = this.companyLogoUrl.checkExistsData()
 )

@@ -3,4 +3,5 @@
     <string name="not_informed">Data not informed</string>
     <string name="company">Company</string>
     <string name="location">Location</string>
+    <string name="image_logo_company">Image logo company</string>
 </resources>

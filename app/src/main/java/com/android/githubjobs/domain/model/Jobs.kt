@@ -15,5 +15,5 @@ data class Jobs(
     val title: String,
     val description: String,
     val howToApply: String,
-    val companyLogo: String
+    val companyLogoUrl: String
 ) : Parcelable

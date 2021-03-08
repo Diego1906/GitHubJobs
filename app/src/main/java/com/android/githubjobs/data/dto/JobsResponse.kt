@@ -13,5 +13,5 @@ data class JobsResponse(
     @Json(name = "title") var title: String? = null,
     @Json(name = "description") var description: String? = null,
     @Json(name = "how_to_apply") var howToApply: String? = null,
-    @Json(name = "company_logo") var companyLogo: String? = null
+    @Json(name = "company_logo") var companyLogoUrl: String? = null
 )

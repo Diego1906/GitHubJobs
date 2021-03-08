@@ -3,5 +3,8 @@
     <dimen name="dip_0">0dp</dimen>
     <dimen name="dip_4">4dp</dimen>
     <dimen name="dip_8">8dp</dimen>
+    <dimen name="dip_24">24dp</dimen>
     <dimen name="sp_18">18sp</dimen>
+    <dimen name="dip_200">200dp</dimen>
+    <dimen name="dip_32">32dp</dimen>
 </resources>
