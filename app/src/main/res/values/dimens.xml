@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dip_0">0dp</dimen>
+    <dimen name="dip_1">1dp</dimen>
+    <dimen name="dip_2">2dp</dimen>
+    <dimen name="dip_3">3dp</dimen>
     <dimen name="dip_4">4dp</dimen>
     <dimen name="dip_8">8dp</dimen>
+    <dimen name="dip_16">16dp</dimen>
     <dimen name="dip_24">24dp</dimen>
-    <dimen name="sp_18">18sp</dimen>
-    <dimen name="dip_200">200dp</dimen>
     <dimen name="dip_32">32dp</dimen>
+    <dimen name="dip_140">140dp</dimen>
+    <dimen name="dip_200">200dp</dimen>
+    <dimen name="sp_18">18sp</dimen>
 </resources>

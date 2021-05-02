@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.android.githubjobs.R
+import com.android.githubjobs.databinding.DetailFragmentBinding
 
 class DetailFragment : Fragment() {
+
+    private lateinit var binding: DetailFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -15,7 +17,11 @@ class DetailFragment : Fragment() {
     ): View? {
         val jobs = DetailFragmentArgs.fromBundle(requireArguments()).jobs
 
-        return inflater.inflate(R.layout.detail_fragment, container, false)
+        binding = DetailFragmentBinding.inflate(inflater)
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.jobs = jobs
+
+        return binding.root
     }
 }
 
