@@ -10,14 +10,14 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.android.githubjobs.R
 import com.android.githubjobs.presentation.adapter.JobsAdapter
-import com.android.githubjobs.presentation.viewmodel.JobsViewModel
+import com.android.githubjobs.presentation.viewmodel.StartViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_start.*
 
 @AndroidEntryPoint
 class StartFragment : Fragment() {
 
-    private val viewModel by viewModels<JobsViewModel>()
+    private val viewModel by viewModels<StartViewModel>()
 
     private val adapter = JobsAdapter { jobs ->
         findNavController().navigate(

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.android.githubjobs.databinding.ItemListJobsBinding
-import com.android.githubjobs.domain.model.Jobs
+import com.android.githubjobs.domain.entities.Jobs
 
 class JobsAdapter(private val action: (Jobs) -> Unit) :
     ListAdapter<Jobs, JobsAdapter.JobsVieWHolder>(DiffCallback) {

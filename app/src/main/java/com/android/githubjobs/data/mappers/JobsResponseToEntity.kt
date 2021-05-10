@@ -1,7 +1,7 @@
-package com.android.githubjobs.data.mapper
+package com.android.githubjobs.data.mappers
 
-import com.android.githubjobs.data.dto.JobsResponse
-import com.android.githubjobs.domain.model.Jobs
+import com.android.githubjobs.data.models.JobsResponse
+import com.android.githubjobs.domain.entities.Jobs
 import com.android.githubjobs.util.checkExistsData
 
 fun JobsResponse.mapToDomain() = Jobs(

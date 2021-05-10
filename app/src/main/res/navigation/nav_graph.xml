@@ -23,6 +23,6 @@
             app:destination="@id/startFragment" />
         <argument
             android:name="jobs"
-            app:argType="com.android.githubjobs.domain.model.Jobs" />
+            app:argType="com.android.githubjobs.domain.entities.Jobs" />
     </fragment>
 </navigation>

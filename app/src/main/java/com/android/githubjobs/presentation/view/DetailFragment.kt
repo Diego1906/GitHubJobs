@@ -9,19 +9,16 @@ import com.android.githubjobs.databinding.DetailFragmentBinding
 
 class DetailFragment : Fragment() {
 
-    private lateinit var binding: DetailFragmentBinding
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val jobs = DetailFragmentArgs.fromBundle(requireArguments()).jobs
 
-        binding = DetailFragmentBinding.inflate(inflater)
-        binding.lifecycleOwner = viewLifecycleOwner
-        binding.jobs = jobs
+        val binding = DetailFragmentBinding.inflate(inflater).apply {
+            lifecycleOwner = viewLifecycleOwner
+            this.jobs = jobs
+        }
 
         return binding.root
     }
 }
-

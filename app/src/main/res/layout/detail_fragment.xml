@@ -7,7 +7,7 @@
 
         <variable
             name="jobs"
-            type="com.android.githubjobs.domain.model.Jobs" />
+            type="com.android.githubjobs.domain.entities.Jobs" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -61,7 +61,7 @@
             android:maxLines="6"
             android:paddingStart="@dimen/dip_8"
             android:paddingTop="@dimen/dip_8"
-            android:text="Description"
+            android:text="@string/description"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +90,7 @@
             android:maxLines="6"
             android:paddingStart="@dimen/dip_8"
             android:paddingEnd="@dimen/dip_8"
-            android:text="Type"
+            android:text="@string/type"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -150,7 +150,7 @@
             android:maxLines="6"
             android:paddingStart="@dimen/dip_8"
             android:paddingEnd="@dimen/dip_8"
-            android:text="Location"
+            android:text="@string/location"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

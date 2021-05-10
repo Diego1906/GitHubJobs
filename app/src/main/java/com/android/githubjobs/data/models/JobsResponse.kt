@@ -1,4 +1,4 @@
-package com.android.githubjobs.data.dto
+package com.android.githubjobs.data.models
 
 import com.squareup.moshi.Json
 

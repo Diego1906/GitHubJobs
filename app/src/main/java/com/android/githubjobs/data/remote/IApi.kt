@@ -1,6 +1,6 @@
 package com.android.githubjobs.data.remote
 
-import com.android.githubjobs.data.dto.JobsResponse
+import com.android.githubjobs.data.models.JobsResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

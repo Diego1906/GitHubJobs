@@ -7,7 +7,7 @@
 
         <variable
             name="jobs"
-            type="com.android.githubjobs.domain.model.Jobs" />
+            type="com.android.githubjobs.domain.entities.Jobs" />
 
     </data>
 
