@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="jobs"
+            type="com.android.githubjobs.domain.entities.Jobs" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.view.DetailFragment">
+
+        <ImageView
+            android:id="@+id/imageDetailLogo"
+            android:layout_width="@dimen/dip_0"
+            android:layout_height="@dimen/dip_140"
+            android:contentDescription="@string/image_logo_company"
+            android:scaleType="fitXY"
+            app:downloadImage="@{jobs.companyLogoUrl}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher" />
+
+        <include
+            android:id="@+id/view01"
+            layout="@layout/view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageDetailLogo" />
+
+        <TextView
+            android:id="@+id/titleDetail"
+            android:layout_width="@dimen/dip_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dip_8"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="@dimen/dip_8"
+            android:text="@{jobs.title}"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view01"
+            tools:text="Lead Software Engineer - azeti ioT Platform" />
+
+        <TextView
+            android:id="@+id/labelDescriptonDetail"
+            android:layout_width="@dimen/dip_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dip_8"
+            android:ellipsize="end"
+            android:maxLines="6"
+            android:paddingStart="@dimen/dip_8"
+            android:paddingTop="@dimen/dip_8"
+            android:text="@string/description"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleDetail" />
+
+        <TextView
+            android:id="@+id/descriptonDetail"
+            android:layout_width="@dimen/dip_0"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:paddingStart="@dimen/dip_8"
+            android:paddingEnd="@dimen/dip_8"
+            android:text="@{jobs.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelDescriptonDetail"
+            tools:text="We are a Berlin-based IoT software company. Our IoT platform enables the simple and fast implementation of industrial IoT applications. We have been offering software Made in Germany for national and international customers since 2006." />
+
+        <TextView
+            android:id="@+id/labelTypeDetail"
+            android:layout_width="@dimen/dip_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dip_16"
+            android:ellipsize="end"
+            android:maxLines="6"
+            android:paddingStart="@dimen/dip_8"
+            android:paddingEnd="@dimen/dip_8"
+            android:text="@string/type"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptonDetail" />
+
+        <TextView
+            android:id="@+id/typeDetail"
+            android:layout_width="@dimen/dip_0"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="6"
+            android:paddingStart="@dimen/dip_8"
+            android:paddingEnd="@dimen/dip_8"
+            android:text="@{jobs.type}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelTypeDetail"
+            tools:text="Full Time" />
+
+        <TextView
+            android:id="@+id/labelCompanyDetail"
+            android:layout_width="@dimen/dip_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dip_8"
+            android:ellipsize="end"
+            android:maxLines="6"
+            android:paddingStart="@dimen/dip_8"
+            android:paddingEnd="@dimen/dip_8"
+            android:text="@string/company"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/typeDetail" />
+
+        <TextView
+            android:id="@+id/companyDetail"
+            android:layout_width="@dimen/dip_0"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="6"
+            android:paddingStart="@dimen/dip_8"
+            android:paddingEnd="@dimen/dip_8"
+            android:text="@{jobs.company}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelCompanyDetail"
+            tools:text="azeti GmbH" />
+
+        <TextView
+            android:id="@+id/labelLocationDetail"
+            android:layout_width="@dimen/dip_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dip_8"
+            android:ellipsize="end"
+            android:maxLines="6"
+            android:paddingStart="@dimen/dip_8"
+            android:paddingEnd="@dimen/dip_8"
+            android:text="@string/location"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/companyDetail" />
+
+        <TextView
+            android:id="@+id/locationDescriptionDetail"
+            android:layout_width="@dimen/dip_0"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="6"
+            android:paddingStart="@dimen/dip_8"
+            android:paddingEnd="@dimen/dip_8"
+            android:text="@{jobs.location}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelLocationDetail"
+            tools:text="Berlin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
