@@ -22,16 +22,6 @@ class StartViewModel @ViewModelInject constructor(private val useCase: IUseCase)
     val progress
         get() = _progress
 
-    fun getByFilter(search: String) {
-        viewModelScope.launch(Dispatchers.IO) {
-            try {
-                _jobs.postValue(useCase.getByFilter(search))
-            } catch (ex: Throwable) {
-                //TODO: not implemented
-            }
-        }
-    }
-
     fun getAll() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
@@ -43,7 +33,15 @@ class StartViewModel @ViewModelInject constructor(private val useCase: IUseCase)
     }
 
     fun hideProgress() {
-        _progress.value = View.GONE
+        setProgress(View.INVISIBLE)
+    }
+
+    fun showProgress() {
+        setProgress(View.VISIBLE)
+    }
+
+    private fun setProgress(value: Int) {
+        _progress.value = value
     }
 
     override fun onCleared() {

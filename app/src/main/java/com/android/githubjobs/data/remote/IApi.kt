@@ -7,8 +7,5 @@ import retrofit2.http.Query
 interface IApi {
 
     @GET("positions.json")
-    suspend fun getByFilter(@Query("search") search: String): List<JobsResponse>
-
-    @GET("positions.json")
     suspend fun getAll(@Query("search") search: String = ""): List<JobsResponse>
 }

@@ -7,19 +7,18 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Inject
 
-class RetrofitImpl @Inject constructor() : IRetrofit {
+class ServiceImpl @Inject constructor() : IService {
 
     private val retrofit: Retrofit
 
     init {
         val moshi = Moshi.Builder()
-            .addLast(KotlinJsonAdapterFactory())
+            .add(KotlinJsonAdapterFactory())
             .build()
 
         retrofit = Retrofit.Builder()
             .baseUrl(BuildConfig.URL_BASE)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
-            //   .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
     }
 

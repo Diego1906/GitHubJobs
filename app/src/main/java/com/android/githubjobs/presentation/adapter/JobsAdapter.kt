@@ -1,15 +1,13 @@
 package com.android.githubjobs.presentation.adapter
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
-import com.android.githubjobs.databinding.ItemListJobsBinding
 import com.android.githubjobs.domain.entities.Jobs
+import com.android.githubjobs.presentation.viewholder.JobsVieWHolder
 
 class JobsAdapter(private val action: (Jobs) -> Unit) :
-    ListAdapter<Jobs, JobsAdapter.JobsVieWHolder>(DiffCallback) {
+    ListAdapter<Jobs, JobsVieWHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobsVieWHolder {
         return JobsVieWHolder.from(parent)
@@ -23,33 +21,15 @@ class JobsAdapter(private val action: (Jobs) -> Unit) :
         }
     }
 
-    class JobsVieWHolder private constructor(private val binding: ItemListJobsBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(jobs: Jobs) {
-            binding.jobs = jobs
-            binding.executePendingBindings()
-        }
-
-        companion object {
-            fun from(parent: ViewGroup): JobsVieWHolder {
-                val view = ItemListJobsBinding.inflate(
-                    LayoutInflater.from(parent.context), parent, false
-                )
-                return JobsVieWHolder(view)
-            }
-        }
-    }
-
     object DiffCallback : DiffUtil.ItemCallback<Jobs>() {
         override fun areItemsTheSame(oldItem: Jobs, newItem: Jobs): Boolean {
             return oldItem == newItem
         }
 
         override fun areContentsTheSame(oldItem: Jobs, newItem: Jobs): Boolean {
-            return oldItem.id == newItem.id && oldItem.createdAt == newItem.createdAt
+            return oldItem.id == newItem.id
+                    && oldItem.createdAt == newItem.createdAt
+                    && oldItem.description.toString() == newItem.description.toString()
         }
     }
 }
-
-

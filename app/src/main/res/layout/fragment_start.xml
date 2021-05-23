@@ -18,7 +18,7 @@
         tools:listitem="@layout/item_list_jobs" />
 
     <ProgressBar
-        android:id="@+id/progress_circular"
+        android:id="@+id/progressCircular"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

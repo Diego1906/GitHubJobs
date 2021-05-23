@@ -19,10 +19,12 @@ class StartFragment : Fragment() {
 
     private val viewModel by viewModels<StartViewModel>()
 
-    private val adapter = JobsAdapter { jobs ->
-        findNavController().navigate(
-            StartFragmentDirections.actionStartFragmentToDetailFragment(jobs)
-        )
+    private val adapter by lazy {
+        JobsAdapter { jobs ->
+            findNavController().navigate(
+                StartFragmentDirections.actionStartFragmentToDetailFragment(jobs)
+            )
+        }
     }
 
     override fun onCreateView(
@@ -33,17 +35,17 @@ class StartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        initRecyclerAdapter()
-        initObserver()
+        init()
     }
 
-    override fun onStart() {
-        super.onStart()
+    private fun init() {
+        initRecycler()
+        initObserver()
+        viewModel.showProgress()
         viewModel.getAll()
     }
 
-    private fun initRecyclerAdapter() {
+    private fun initRecycler() {
         recyclerItemJobs?.adapter = adapter
     }
 
@@ -57,7 +59,7 @@ class StartFragment : Fragment() {
 
         viewModel.progress.observe(viewLifecycleOwner, Observer { value ->
             value?.let {
-                progress_circular?.visibility = value
+                progressCircular?.visibility = value
             }
         })
     }

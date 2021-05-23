@@ -1,6 +1,6 @@
 package com.android.githubjobs.data.remote
 
-interface IRetrofit {
+interface IService {
 
     fun getInstance() : IApi
 }

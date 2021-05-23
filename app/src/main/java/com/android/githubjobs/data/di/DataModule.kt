@@ -1,7 +1,7 @@
 package com.android.githubjobs.data.di
 
-import com.android.githubjobs.data.remote.IRetrofit
-import com.android.githubjobs.data.remote.RetrofitImpl
+import com.android.githubjobs.data.remote.IService
+import com.android.githubjobs.data.remote.ServiceImpl
 import com.android.githubjobs.domain.repository.IRepository
 import com.android.githubjobs.data.repository.RepositoryImpl
 import dagger.Module
@@ -13,8 +13,8 @@ import dagger.hilt.android.components.ActivityComponent
 @Module
 object DataModule {
     @Provides
-    fun provideRetrofit(): IRetrofit = RetrofitImpl()
+    fun provideService(): IService = ServiceImpl()
 
     @Provides
-    fun provideRepository(api: IRetrofit): IRepository = RepositoryImpl(api)
+    fun provideRepository(api: IService): IRepository = RepositoryImpl(api)
 }
