@@ -8,16 +8,16 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 @BindingAdapter("downloadImage")
-fun download(view: ImageView, urlToImage: String) {
+fun ImageView.download(urlToImage: String) {
     val uri = urlToImage.toUri().buildUpon().scheme("https").build()
 
     Glide
-        .with(view.context)
+        .with(context)
         .load(uri)
         .apply(
             RequestOptions()
                 .placeholder(R.drawable.loading_animation)
                 .error(R.drawable.ic_broken_image)
         )
-        .into(view)
+        .into(this)
 }
