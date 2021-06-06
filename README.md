@@ -31,13 +31,18 @@ API utilizada [The GitHub Jobs API](https://jobs.github.com/api).
     - [Material Design](https://material.io/).
     - [ConstraintLayout](https://developer.android.com/training/constraint-layout).
     - [Coroutines](https://developer.android.com/kotlin/coroutines?gclid=Cj0KCQjwhr2FBhDbARIsACjwLo1AReUTR-2dgLGqHoXs2xytukd0yq6GVTSV5neH1ARYCqmHpt5LwIkaAok4EALw_wcB&gclsrc=aw.ds).
-    
+
 - Bibliotecas Externas
   - 
   - [Retrofit](https://square.github.io/retrofit/) é utilizada para fazer requisições HTTP a serviços Web.
   - [Moshi](https://github.com/square/moshi) é uma moderna biblioteca JSON para Android, Kotlin e Java. Ela faz de forma fácil a conversão de um JSON para objetos Kotlin e Java.
   - [Glide](https://github.com/bumptech/glide) O Glide suporta a busca, decodificação e exibição de fotos, imagens e GIFs animados. O Glide inclui uma API flexível que permite que os desenvolvedores se conectem a quase qualquer pilha de rede.
-  
+
+- Bibliotecas para Testes
+  -
+  - [Mockito-Kotlin](https://github.com/nhaarman/mockito-kotlin) é uma pequena biblioteca que fornece funções de ajuda para trabalhar com Mockito em Kotlin
+  - [JUnit](https://pt.wikipedia.org/wiki/JUnit) é um framework que facilita a criação e manutenção do código para a automação de testes com apresentação dos resultados.
+
 - Design de Arquitetura
   - 
   - [MVVM](https://developer.android.com/jetpack/docs/guide) é o padrão de design de arquitetura de software que a Google indica para os novos desenvolvimento. Os novos componentes de arquitetura já são lançados com suporte a esse tipo de padrão.
