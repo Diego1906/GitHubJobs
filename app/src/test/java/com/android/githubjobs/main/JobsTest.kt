@@ -1,4 +1,4 @@
-package com.android.githubjobs
+package com.android.githubjobs.main
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
@@ -7,7 +7,7 @@ import com.android.githubjobs.data.repository.MockRepository
 import com.android.githubjobs.domain.JobsUseCaseTest
 import com.android.githubjobs.domain.entities.Jobs
 import com.android.githubjobs.mock.JobsMock
-import com.android.githubjobs.presentation.viewmodel.ViewModelMock
+import com.android.githubjobs.viewmodel.ViewModelMock
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
