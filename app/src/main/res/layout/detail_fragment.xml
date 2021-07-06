@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/imageDetailLogo"
             android:layout_width="@dimen/dip_0"
-            android:layout_height="@dimen/dip_140"
+            android:layout_height="@dimen/dip_200"
             android:contentDescription="@string/image_logo_company"
             android:scaleType="fitXY"
             app:downloadImage="@{jobs.companyLogoUrl}"
